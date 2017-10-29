@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Phone Book</title>
+    <meta name="description" content="save and retireve contacts' info">
+    <meta name="author" content="abdallah awwad">
+
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+
+<body>
+
+    <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container">
+        <div class="row">
+            <div class="one-half column">
+                <h3>Phone Book</h3>
+                <p>
+                    Store your contacts info where you can keep them organized and retreive them easily with a simple search.
+                </p>
+                <hr>
+            </div>
+        </div>
+        <button class="button-primary" id="toggle-new-contact">
+                <h5>Add A Contact Info</h5>                
+        </button>
+        <div id="new-contact-box" style="display:none;">
+            <div class="row">
+                <div class="four columns">
+                    <label for="input-name">Name</label>
+                    <input class="u-full-width" type="text" id="input-name">
+                </div>
+                <div class="four columns">
+                    <label for="input-phone">Phone</label>
+                    <input class="u-full-width" type="text" id="input-phone">
+                    <p>Phone Number should be in the format xx-xxx-xxxx </p>
+                </div>
+                <div class="four columns">
+                    <label for="input-email">Email</label>
+                    <input class="u-full-width" type="text" id="input-email">
+                    <p>Email Address Should be valid</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="four columns">
+                    <button class="button-primary" id="add-contact-info">Add Info</button>
+                </div>
+                <div class="four columns">
+                </div>
+                <div class="four columns">
+                </div>
+            </div>
+            <div class="row">
+                <p id="output-message"></p>
+            </div>
+        </div>
+        <hr>
+        
+        <h5>Number Of Contacts Per Page</h5>
+        <div class="row" id="contacts-per-page">
+            <button data-value="5">5</button>
+            <button data-value="10">10</button>
+            <button data-value="20">20</button>
+            <button data-value="50">50</button>
+            <button data-value="100">100</button>
+        </div>
+        <div class="row">
+            <div class="one-half column">
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="eight columns">
+                    <h5>View Contacts</h5>                    
+            </div>
+            <div class="four columns">
+                <input type="text" placeholder="Search Contacts" id="input-query">
+            </div>
+        </div>
+        <div class="row">
+            <table class="u-full-width">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="row" id="pagination">
+
+        </div>
+    </div>
+
+    <!-- JavaScipt Code
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src='script.js'></script>
+
+    <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>
