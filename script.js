@@ -1,4 +1,4 @@
-var PhoneBook = function () {
+var PhoneBook =  function () {
   this._storage = []
   this._contactsPerPage = 5;
   this._currentPage = 0;
@@ -37,17 +37,23 @@ PhoneBook.prototype = {
       contacts = this.search(query)
     }
     return contacts.slice(startIndex, endIndex)
+  },
+  download: function () {
+    fetch("data.json")
+    .then(data=>data.json())
+    .then(contacts=> {
+      contacts.forEach(contact=> this.add(contact))
+      displayList();
+    });
   }
 };
 
 var myPhoneBook = new PhoneBook();
 
-
 // attach Event Listeners 
 (function () {
-  // initaal display on page load 
-  displayList();
-
+  // initial display on page load 
+  myPhoneBook.download();
   // activate new contact box when on clicking the add new contact button 
   var newContactBox = document.getElementById('new-contact-box');
   var toggleNewContact = document.getElementById('toggle-new-contact');
